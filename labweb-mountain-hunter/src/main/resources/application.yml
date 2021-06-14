@@ -1,0 +1,40 @@
+
+server:
+  port: 3000 # 伺服器的port號
+  
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver    
+#    url: jdbc:mysql://localhost:3306/Mountain
+    url: jdbc:mysql://34.80.240.158/Mountain
+    username: root
+    password: root
+    
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+#spring:
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:todolist # h2 database 連接位址
+#    driver-class-name: org.h2.Driver # 配置driver
+#    username: sa # database 用戶名
+#    password:  # database 密碼
+#
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+    
+    thymeleaf:
+    cache: false
+    prefix: classpath:/templates/    # 設定去templates資料夾找html檔案
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+    
+    spring:
+  messages:
+    fallback-to-system-locale: false # 找不到當前語言檔時，至系統默認index.properties
+    basename: static/lang/index # 將語言檔配置在static/lang底下，預設為index
