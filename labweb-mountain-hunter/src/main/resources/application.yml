@@ -1,19 +1,22 @@
 
 server:
-  port: 3000 # 伺服器的port號
+  port: 8080 # 伺服器的port號
   
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver    
-#    url: jdbc:mysql://localhost:3306/Mountain
-    url: jdbc:mysql://34.80.240.158/Mountain
+    url: jdbc:mysql://localhost:3306/wordpress
+#    url: jdbc:mysql://34.80.240.158/wordpress
+
+
     username: root
     password: root
     
   jpa:
-    hibernate.ddl-auto: update
+    properties.hibernate.dialect: org.hibernate.dialect.MySQLDialect
     generate-ddl: true
     show-sql: true
+    
 #spring:
 #  h2:
 #    console:
