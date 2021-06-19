@@ -61,6 +61,8 @@ public class GroupController {
 			return ResponseEntity.status(HttpStatus.OK).body("Success Update!");
 		} return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Try Again!");
 	}
+	
+	//依據id刪除資料
 	@DeleteMapping("/groups/{id}")
 	public ResponseEntity deleteGroup(@PathVariable Integer id) {
 		if (Gservice.deleteGroup(id)) {

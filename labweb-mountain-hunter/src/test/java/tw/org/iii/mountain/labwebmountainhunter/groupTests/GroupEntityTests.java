@@ -1,4 +1,4 @@
-package tw.org.iii.mountain.labwebmountainhunter.group;
+package tw.org.iii.mountain.labwebmountainhunter.groupTests;
 
 import javax.persistence.PersistenceContext;
 

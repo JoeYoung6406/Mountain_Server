@@ -9,10 +9,10 @@ public class JDBC_Conn_Test {
 	public static void main(String[] args) {
 		try {
 			Properties prop = new Properties();
-			prop.put("user", "root");
-			prop.put("password", "root");
+			prop.put("user", "ravelai2_WPYKF");
+			prop.put("password", "iiiEngineer202102@");
 			Connection conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/", prop);
+					"jdbc:mysql://162.241.224.215/", prop);
 			System.out.println("ok4");
 		}catch (Exception e) {
 			System.out.println(e);
