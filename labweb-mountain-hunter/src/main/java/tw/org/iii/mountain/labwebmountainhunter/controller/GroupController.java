@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tw.org.iii.mountain.labwebmountainhunter.entity.Group;
-import tw.org.iii.mountain.labwebmountainhunter.entity.Todo;
 import tw.org.iii.mountain.labwebmountainhunter.service.GroupService;
 
 @RestController
@@ -62,11 +61,27 @@ public class GroupController {
 		} return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Try Again!");
 	}
 	
-	//依據id刪除資料
+	//依據id刪除資料 
 	@DeleteMapping("/groups/{id}")
 	public ResponseEntity deleteGroup(@PathVariable Integer id) {
 		if (Gservice.deleteGroup(id)) {
 			return ResponseEntity.status(HttpStatus.OK).body("Delete Success!");
 		} return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Faild!");
+	}
+	
+	//顯示正在參加的團
+	@GetMapping("/groups/ing/{id}")
+	public ResponseEntity showIngGroups(@PathVariable String id) {
+		return ResponseEntity.status(HttpStatus.OK).body(Gservice.showIngGroups(id));
+	}
+	//顯示未參加的團
+	@GetMapping("groups/join/{id}")
+	public ResponseEntity showJoinGroups(@PathVariable String id) {
+		return ResponseEntity.status(HttpStatus.OK).body(Gservice.showJoinGroups(id));
+	}
+	//顯示歷史任務團
+	@GetMapping("groups/his/{id}")
+	public ResponseEntity showHistory(@PathVariable String id) {
+		return ResponseEntity.status(HttpStatus.OK).body(Gservice.showHistoryGroups(id));
 	}
 }

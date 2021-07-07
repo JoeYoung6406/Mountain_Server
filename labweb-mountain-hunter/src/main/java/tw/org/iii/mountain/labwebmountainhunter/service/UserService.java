@@ -19,8 +19,8 @@ public class UserService {
 		return userRe.findAll();
 	}
 
-	public Integer createUser(User user) {
-		return userRe.save(user).getId();
+	public User createUser(User user) {
+		return userRe.save(user);
 	}
 
 	public User getUserInfoByID(Integer id) {
@@ -94,5 +94,8 @@ public class UserService {
 	
 	public User getInfoByPassword(String password) {
 		return userRe.findByPassword(password);
+	}
+	public List<User> showRank() {
+		return userRe.showRankBypoint();
 	}
 }

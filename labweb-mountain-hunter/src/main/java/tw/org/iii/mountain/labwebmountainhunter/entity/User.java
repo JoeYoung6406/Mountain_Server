@@ -22,7 +22,9 @@ import lombok.NoArgsConstructor;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	Integer id;
+	@Column(name = "user_login")
 	String account;
 	@Column(name="user_pass")
 	String password;

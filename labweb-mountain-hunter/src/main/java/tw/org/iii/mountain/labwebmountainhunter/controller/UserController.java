@@ -36,7 +36,7 @@ public class UserController {
 		return ResponseEntity.status(HttpStatus.OK).body(userService.getGroup());
 	}
 
-	@GetMapping("/users/id/{id}")
+	@GetMapping("/users/{id}")
 	public User findUserById(@PathVariable Integer id) {
 		return userService.findById(id);
 	}
@@ -57,7 +57,7 @@ public class UserController {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Try again");
 	}
-	@PutMapping("/users/update/{id}")
+	@PutMapping("/users/{id}")
 	public ResponseEntity UpdateUser(@PathVariable Integer id, @RequestBody User user) {
 		 if (userService.updateUser(id, user)) {
 			return ResponseEntity.status(HttpStatus.OK).body(userService.findById(id));
@@ -68,6 +68,10 @@ public class UserController {
 		if (userService.deleteUser(id)) {
 			return ResponseEntity.status(HttpStatus.OK).body("Success!");
 		}return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Try Again!");
+	}
+	@GetMapping("/rank")
+	public ResponseEntity showRank() {
+		return ResponseEntity.status(HttpStatus.OK).body(userService.showRank());
 	}
 	
 //	@PutMapping("/users/change/{account}")

@@ -6,11 +6,13 @@ spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver    
     url: jdbc:mysql://localhost:3306/wordpress
-#    url: jdbc:mysql://34.80.240.158/wordpress
-
-
+    
+#    url: jdbc:mysql://162.241.224.215/ravelai2_traveladventurehunter
     username: root
     password: root
+
+#    username: ravelai2
+#    password: iiiEngineer2021@
     
   jpa:
     properties.hibernate.dialect: org.hibernate.dialect.MySQLDialect

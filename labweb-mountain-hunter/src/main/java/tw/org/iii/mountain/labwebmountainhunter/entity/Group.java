@@ -36,7 +36,7 @@ public class Group {
 	Integer enable_forum;
 	@CreatedDate
 	Timestamp date_created;
-	Date start_date;
+	String start_date;
 	String mountain_name;
 	Integer total_num;
 	String image;
@@ -45,10 +45,10 @@ public class Group {
 	Timestamp start_time;
 	Timestamp finish_time;
 	Time total_time;
-	BigDecimal start_lat;
-	BigDecimal start_lng;
-	BigDecimal finish_lat;
-	BigDecimal finish_lng;
+	String start_lat;
+	String start_lng;
+	String finish_lat;
+	String finish_lng;
 	
 
 }
